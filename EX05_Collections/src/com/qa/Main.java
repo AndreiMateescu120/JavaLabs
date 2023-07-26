@@ -5,10 +5,7 @@ import com.qa.model.Cat;
 import com.qa.model.Dog;
 import com.qa.model.Rabbit;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,5 +58,34 @@ public class Main {
             System.out.println(iter.next());
         }
 
-    }cd 
+        // this is the same for the animal list and the set, we
+// need to iterate through everything
+        System.out.println("\nFinding Denis.");
+        for (Animal a : animals){
+            if (a.getName().equals("Denis")){
+                System.out.println(
+                        "Found Denis in the ArrayList: " + a);
+            }
+        }
+
+// And for a HashMap
+        System.out.println("Found Denis in the HashMap: " +
+                hashMap.get("Denis"));
+
+
+    Collections.sort(animals);
+           System.out.println("Sorted animal list");
+           for (int i = 0; i < animals.size(); i++){
+        System.out.println(animals.get(i));
+    }
+
+        TreeMap<String, Animal> tree = new TreeMap<>();
+        tree.putAll(hashMap);
+
+        System.out.println("TreeMap");
+        for (String key : tree.keySet()){
+            System.out.println("Key: " + key + " Value: " +
+                    tree.get(key));
+        }
+    }
 }

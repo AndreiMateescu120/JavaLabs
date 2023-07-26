@@ -1,6 +1,6 @@
 package com.qa.model;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal> {
     private String name;
     private Integer age;
 
@@ -34,5 +34,10 @@ public abstract class Animal {
 
     public String sayHello(){
         return "Animal says hello!";
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return age - o.getAge();
     }
 }
